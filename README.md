@@ -1,10 +1,16 @@
 # xrpl-token
 
-A simple fungible token on the XRP Ledger, built on the native **MPToken**
-standard (not classic trust-line Issued Currencies). New supply is minted
-annually via a multisig-gated issuer account and sent to a multisig-gated
-governance account, which will later decide fund allocation.
+A simple fungible token on the XRP Ledger. Initial [rough idea](https://app.warp.dev/conversation/ac6ad3f0-81ce-4d26-a6e0-9385bb571802): a simplistic, base technical demo of a "Carbon Coin." Theoretically administered by the UN; attempt to align financial and planetary goals: decreased anthropogenic carbon → deflationary token mechanics → holding rewarded.)
 
+Core architecture:
+
+* **Token standard**: XRPL native MPToken (MPTokenIssuanceCreate / MPTokenAuthorize / Payment).
+* **Supply**: open-ended (no MaximumAmount), whole units only (AssetScale omitted) — no decimals, no floating-point conversion anywhere.
+* **Issuance flags**: transferable, lockable (freeze), clawback-able. Not allow-listed (tfMPTRequireAuth is not set) — any account can hold the token once it self-authorizes.
+* **Issuer account** is a 2-of-3 multisig with master key disabled. (Annual mint performed by an official consortium of UN-affiliated scientists; supply pegged to anthropogenic carbon emissions.)
+* **Governance account** is likewise a 2-of-3 multisig with its master key disabled ("UN-convened, not UN-controlled" allocation governance body separate from issuer).
+* **Local testing, .env-based switch**: all scripts and tests run in local devnet by default. Switch to testnet via simple .env update.
+* **Minimal-JS frontend with GhostSig signing**: frontend implemented in Astro using vanilla JS code islands, with multisig workflows supported by GhostSig and out-of-band URL relay (signers message on Signal, Discord, Slack, etc).
 
 ## Aha DevX prototype
 
