@@ -1,6 +1,6 @@
 # xrpl-token
 
-A simple fungible token on the XRP Ledger. Initial [rough idea](https://app.warp.dev/conversation/ac6ad3f0-81ce-4d26-a6e0-9385bb571802): a simplistic, base technical demo of a "Carbon Coin." Theoretically administered by the UN; attempt to align financial and planetary goals: decreased anthropogenic carbon → deflationary token mechanics → holding rewarded.)
+A simple fungible token on the XRP Ledger. Initial [rough idea](https://app.warp.dev/conversation/ac6ad3f0-81ce-4d26-a6e0-9385bb571802): a simplistic, base technical demo of a "Carbon Coin." Theoretically administered by the UN; attempt to align financial and planetary goals: decreased anthropogenic carbon → deflationary token mechanics → holding rewarded.
 
 Core architecture:
 
